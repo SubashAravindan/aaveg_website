@@ -51,7 +51,7 @@ function setCore() {
 	       {
 	           "name":  "Abilash",
 	           "post":  "Head, Design",
-	           "image": base_url+"maleplaceholder.jpg"
+	           "image": base_url+"DSC_0019.jpg"
 	       },
 	       {
 	           "name":  "Varsha",
