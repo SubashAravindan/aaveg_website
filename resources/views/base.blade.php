@@ -65,7 +65,7 @@
         <h4 class="modal-title" id="myModalLabel">Contact Us</h4>
       </div>
       <div class="modal-body">
-        Chairperson - <b>Bhargav Mangalgiri</b><br />
+        Chairperson - <b>Bhargava Mangalagiri</b><br />
         +91 9629882258<br /><br />
         Treasurer - <b>Ram Sundaram Swaminathan</b><br />
         +91 7337355001<br /><br />
