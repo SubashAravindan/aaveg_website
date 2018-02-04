@@ -16,7 +16,7 @@
     <thead class="thead-default">
       <tr>
         <th>Event Name</th>
-        <th class="gold">Diamond</th>
+        <th>Diamond</th>
         <th>Coral</th>
         <th>Jade</th>
         <th>Agate</th>
@@ -27,7 +27,7 @@
     @{{#each message.Culturals}}
       <tr>
         <td>@{{event_name}}</td>
-        <td class="gold">@{{diamond_score}}</td>
+        <td>@{{diamond_score}}</td>
         <td>@{{coral_score}}</td>
         <td>@{{jade_score}}</td>
         <td>@{{agate_score}}</td>
@@ -36,7 +36,7 @@
     @{{/each}}
       <tr>
         <td>TOTAL</td>
-        <td class="gold">@{{message.culturals_total.diamond}}</td>
+        <td>@{{message.culturals_total.diamond}}</td>
         <td>@{{message.culturals_total.coral}}</td>
         <td>@{{message.culturals_total.jade}}</td>
         <td>@{{message.culturals_total.agate}}</td>
@@ -55,7 +55,7 @@
         <th>Diamond</th>
         <th>Coral</th>
         <th>Jade</th>
-        <th class="gold">Agate</th>
+        <th>Agate</th>
       </tr>
     </thead>
     <tbody>
@@ -65,7 +65,7 @@
         <td>@{{diamond_score}}</td>
         <td>@{{coral_score}}</td>
         <td>@{{jade_score}}</td>
-        <td class="gold">@{{agate_score}}</td>
+        <td>@{{agate_score}}</td>
       </tr>
     @{{/each}}
       <tr>
@@ -73,7 +73,7 @@
         <td>@{{message.sports_total.diamond}}</td>
         <td>@{{message.sports_total.coral}}</td>
         <td>@{{message.sports_total.jade}}</td>
-        <td class="gold">@{{message.sports_total.agate}}</td>
+        <td>@{{message.sports_total.agate}}</td>
       </tr>
     </tbody>
     </table>
@@ -86,7 +86,7 @@
       <tr>
         <th>Event Name</th>
         <th>Diamond</th>
-        <th class="gold">Coral</th>
+        <th>Coral</th>
         <th>Jade</th>
         <th>Agate</th>
         <th>Opal</th>
@@ -97,7 +97,7 @@
       <tr>
         <td>@{{event_name}}</td>
         <td>@{{diamond_score}}</td>
-        <td class="gold">@{{coral_score}}</td>
+        <td>@{{coral_score}}</td>
         <td>@{{jade_score}}</td>
         <td>@{{agate_score}}</td>
         <td>@{{opal_score}}</td>
@@ -106,7 +106,7 @@
       <tr>
         <td>TOTAL</td>
         <td>@{{message.misc_total.diamond}}</td>
-        <td class="gold">@{{message.misc_total.coral}}</td>
+        <td>@{{message.misc_total.coral}}</td>
         <td>@{{message.misc_total.jade}}</td>
         <td>@{{message.misc_total.agate}}</td>
         <td>@{{message.misc_total.opal}}</td>

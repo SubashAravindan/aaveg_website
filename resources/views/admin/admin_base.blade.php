@@ -50,12 +50,12 @@
 		</script>
 <body>
 		<ul id="oc-dropdown" class="dropdown-content">
-		  <li><a href="javascript: location.href = (SITE_BASE_URL + '/admin/events/newevent')">New Event</a></li>
-		  <li><a href="javascript: location.href = (SITE_BASE_URL + '/admin/events/updateevent')">Update Event</a></li>
+		  <li><a href="javascript: location.href = (SITE_BASE_URL + '/admin/18/events/newevent')">New Event</a></li>
+		  <li><a href="javascript: location.href = (SITE_BASE_URL + '/admin/18/events/updateevent')">Update Event</a></li>
 		</ul>
 		<ul id="content-dropdown" class="dropdown-content">
-		  <li><a href="javascript: location.href = (SITE_BASE_URL + '/admin/blog/newpost')">New Post</a></li>
-		  <li><a href="javascript: location.href = (SITE_BASE_URL + '/admin/blog/updatepost')">Update Post</a></li>
+		  <li><a href="javascript: location.href = (SITE_BASE_URL + '/admin/18/blog/newpost')">New Post</a></li>
+		  <li><a href="javascript: location.href = (SITE_BASE_URL + '/admin/18/blog/updatepost')">Update Post</a></li>
 		</ul>
 		<div class="navbar-fixed">
 		  <nav>
@@ -70,10 +70,10 @@
 		        <li><a class="dropdown-button" href="#!" data-activates="content-dropdown">Blog</a></li>
 		       	@endif
 		      	@if($permission==3)
-				<li><a href="/admin/scoreboard/newscore">Scoreboard</a></li>
+				<li><a href="/admin/18/scoreboard/newscore">Scoreboard</a></li>
 		       	@endif
 		      	@if($permission==4)
-				<li><a href="/admin/freshers">Freshers</a></li>
+				<li><a href="/admin/18/freshers">Freshers</a></li>
 		       	@endif
 		      @endforeach
 		        <li onclick=""><a href="#" onclick="logout();">Logout</a></li>
