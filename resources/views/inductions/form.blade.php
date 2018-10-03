@@ -20,7 +20,16 @@
                 <label for="{{ $question->question_id }}">{{ $question->question_text }}</label>
                 @if($question->rows > 1)
                     <textarea class="form-control" id="{{ $question->question_id }}" name="responses[{{ $question->question_id }}]" placeholder="{{ $question->question_text }}" required rows="{{ $question->rows }}"></textarea>
-                @else
+                @elseif($question->rows == -1)
+                    <select class="form-control" id="{{ $question->question_id }}" name="responses[{{ $question->question_id }}]" required>
+                        <option value="Agate">Agate</option> 
+                        <option value="Coral">Coral</option> 
+                        <option value="Diamond">Diamond</option> 
+                        <option value="Jade">Jade</option> 
+                        <option value="Opal">Opal</option> 
+                    </select>
+
+                @elseif($question->rows == 1)
                     <input type="text" class="form-control" id="{{ $question->question_id }}" name="responses[{{ $question->question_id }}]" placeholder="{{ $question->question_text }}" required>
                 @endif                
             </div>   
