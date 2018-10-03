@@ -1,0 +1,19 @@
+label {
+  font-size: 20px;
+}
+
+.display-3 {
+  	font-weight: bold;
+  	font-size: 50px;
+  	padding: 20px;
+  	text-shadow: 0px 0px 12px #000000,
+                 4px 4px 6px  #000000;
+	background: #bc4e9c;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #f80759, #bc4e9c);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #f80759, #bc4e9c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+small {
+  font-size: 20px;
+  color: white;
+}

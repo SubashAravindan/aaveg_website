@@ -5,6 +5,7 @@
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
     <link rel="shortcut icon" type="text/css" href="{{asset('favicon.png')}}">
+    @yield('links')
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
@@ -62,6 +63,7 @@
 		    <div class="nav-wrapper teal accent-4">
 		      <img src="{{ asset('images/aaveglogo.png') }}" width="150px" style="margin:5px;" onclick="location.href = SITE_BASE_URL + '/home'">
 		      <ul id="nav-mobile" class="right">
+		      	<li><a href="/admin/inductions">INDUCTIONS</a></li>
 		      @foreach(Session::get('permissions', []) as $permission)
 		      	@if($permission==1)
 		        <li><a class="dropdown-button" href="#!" data-activates="oc-dropdown">Events</a></li>

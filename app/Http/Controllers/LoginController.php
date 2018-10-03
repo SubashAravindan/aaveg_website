@@ -18,20 +18,24 @@ use App\Models\UserTokens;
 
 class LoginController extends Controller
 {
-    public function tshirtLogin(Request $request) {
+    public function userLogin(Request $request) {
         try {
             $validator = Validator::make($request->all(),[
                 'roll_no'  => 'required|digits:9',
                 'password' => 'required'
             ]);
 
+            $roll_no =(string)$request->input('roll_no'); 
+            if ($roll_no!='102117058'||($roll_no[0]!='1'&&$roll_no[5]!='8')||$validator->fails()) {
+                return Redirect::to('/loginfail');
+                // $response = $validator->errors()->all();
+                // $status = 400;
+                // $message = "Invalid Parameters";
+                // return JsonResponse::response($status, $message);                
+            }
+            
         //check for valid parameters
-        if($validator->fails()) {
-            $response = $validator->errors()->all();
-            $status = 400;
-            $message = "Invalid Parameters";
-            return JsonResponse::response($status, $message);
-        }
+            
 
             $roll_no  = $request->input('roll_no');
             $username = $roll_no."@nitt.edu";
@@ -39,7 +43,6 @@ class LoginController extends Controller
             $password = $request->input('password');
             
             if(IMAPAuth::tauth($roll_no,$password)) {
-            //if(true) {
                 Log::info($roll_no." has logged in");
                 Session::put([
                     'roll_no' => $roll_no,
@@ -64,7 +67,7 @@ class LoginController extends Controller
                     $new_token->save();
 
                     DB::commit();
-                    return JsonResponse::response($status_code, $user_auth);
+                    return Redirect::to('/inductions');
                 } catch (Exception $e) {
                     
 					DB::rollBack();
@@ -74,10 +77,11 @@ class LoginController extends Controller
             
             } else {
                 Log::info($roll_no." has attempted to login and failed");
-                $status_code = 400;
-                $message = "Failure";
-				return JsonResponse::response($status_code, $message);
-				//return Redirect::to('/tshirt');
+                return Redirect::to('/loginfail');
+    //             $status_code = 400;
+    //             $message = "Failure";
+				// return JsonResponse::response($status_code, $message);
+				
             }
         } catch (Exception $e) {
             $status_code = 500;
@@ -86,13 +90,14 @@ class LoginController extends Controller
             return JSONResponse::response($status_code,$response);
         }
     }
-    public function tshirtLogout(Request $request) {
+    public function userLogout(Request $request) {
         try {
             $status_code = 200;
             $response = "You have been logged out";
             Log::info(Session::get('roll_no')." logged out");
             Session::flush();
-            return JSONResponse::response($status_code,$response);
+            // return JSONResponse::response($status_code,$response);
+            return Redirect::to('/login');
         } catch (Exception $e) {
             $status_code = 500;
             $response = $e->getMessage()." ".$e->getLine();

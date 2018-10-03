@@ -6,7 +6,7 @@ $('.collapsible').collapsible({
     accordion : false
 });
 function downloadExcel () {
-	var route = SITE_BASE_URL + '/admin/freshers/getexcel';
+	var route = '/admin/freshers/getexcel';
 	var method = 'POST';
 	var request = $.ajax({
 		url: route,
@@ -14,6 +14,7 @@ function downloadExcel () {
 	});
 	request.done(function(data){
 		if(data.status_code === 200) {
+
 		} else {
 			alert('Please Specify an Event');
 		}
@@ -26,7 +27,7 @@ function downloadExcel () {
 @section('main')
 <div class="container">
     <h3 style="text-align: center">Fresher's Night</h3>
-    <!-- <a class="waves-effect waves-light btn" onclick="downloadExcel()">Download Excel</a> -->
+    <a class="waves-effect waves-light btn" onclick="downloadExcel()">Download Excel</a>
     <div class="valgn-wrapper" >
         <ul class="collapsible popout" data-collapsible="accordion">
 @foreach($freshers as $fresher)

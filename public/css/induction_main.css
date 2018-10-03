@@ -1,0 +1,17 @@
+ .inductions-container{
+ 	margin: 0 auto;
+ 	margin-top: 6%;
+ 	min-width: 350px;
+ 	width: 60%;
+ 	padding: 10px;
+ }
+ 
+ h1{
+ 	font-size: 3.5em;
+ 	text-align: center;	
+ }
+
+ .logout-div{
+ 	margin-top: 50px;
+ 	text-align: right;
+ }

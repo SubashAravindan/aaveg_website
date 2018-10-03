@@ -1,0 +1,34 @@
+#main-header{
+	text-align: center;
+}
+
+.collapsible-header{
+	clear: both;
+}
+
+.collapsible-header .roll_no_p{
+	font-size:14pt;
+	float:left;
+}
+
+
+.profile{
+	text-align: center;
+	font-size: 30px;
+}
+
+hr{
+	margin: 0 30px; 
+}
+
+#body_div{
+	margin:0;
+	padding:0;
+}
+
+.collapsible-body .response_p{
+	padding: 10px 30px; 
+}
+#profile-dropdown{
+	text-align: center;
+}

@@ -50,9 +50,9 @@ Route::get('/admin/login', function () {
 Route::get('/events/online/photography', function () {
     return view('photography');
 });
-//Route::get('/freshersnight', function () {
-//    return view('freshers');
-//});
+Route::get('/freshersnight', function () {
+   return view('freshers');
+});
 
 Route::get('/admin/login', function () {
     return view('admin.admin_login');
@@ -64,7 +64,7 @@ Route::get('/tshirt', function () {
     if(Session::get('roll_no')) {
         return Redirect::to('/tshirt/register');
     } else {
-        return view('login');
+        return Redirect::to('/login');
     }
 });
 Route::get('/tshirt/register','TShirtController@getTshirtPage');
@@ -82,6 +82,12 @@ Route::group(['middleware' => 'checkSession'], function() {
 	Route::get('/admin/blog/newpost', function () {
 	    return view('admin.admin_blog_newpost');
 	});
+    Route::get('/admin/inductions', function() {
+        return Redirect::to('/admin/inductions/all');
+    });
+    Route::get('/admin/inductions/getexcel', 'InductionsController@getExcel');
+    Route::get('/admin/inductions/{profile}', 'InductionsController@adminView');
+    
 	// Admin events
 	Route::post('/admin/events/newevent', 'Admin\Events@newEvent');
 	Route::post('/admin/blog/newpost', 'Admin\PanelBlog@newPost');
@@ -130,9 +136,22 @@ Route::post('/events/online/photography', 'PhotographyController@submitPhoto');
 //Fantasy Cup
 Route::post('/games/fantasycup', 'GamesController@predictEvent');
 
+//Student auth routes
+Route::get('/login', function() {
+    return view('login');
+});
+Route::post('/login','LoginController@userLogin');
+Route::get('/logout','LoginController@userLogout');
+Route::get('/loginfail', function() {
+    return view('loginfail');
+});
+//Induction routes
+Route::get('/inductions', 'InductionsController@inductionsPage');
+Route::get('/inductions/form/{profile}', 'InductionsController@displayForm');
+Route::post('/inductions/form/{profile}', 'InductionsController@submitForm');
+
+Route::get('/design/workshop', function() {
+    return Redirect::to('https://goo.gl/forms/6e9siGj7MwBUvQ9W2');
+});
 //Tshirt Routes
-//Going to use the /login as a general all purpose login
-//route. Seprate it later
-Route::post('/login','LoginController@tshirtLogin');
-#Route::post('/logout','LoginController@tshirtLogout');
 #Route::post('/tshirt/register','TShirtController@registerForTshirt');

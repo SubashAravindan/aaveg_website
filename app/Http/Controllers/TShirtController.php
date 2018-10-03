@@ -23,7 +23,7 @@ class TShirtController extends Controller
                 'hostel' => 'required',
                 'name'   => 'required',
             ]);
-
+            
             if($validator->fails()) {
                 $message = $validator->errors()->all();
                 return JSONResponse::response(400, $message);
@@ -53,7 +53,7 @@ class TShirtController extends Controller
     public function getTshirtPage(Request $request) {
         $roll_no = Session::get('roll_no');
         if(!$roll_no) {
-            return Redirect::to('/tshirt');
+            return Redirect::to('/login');
         } else {
             $regCheck = TshirtDetails::where('roll_no','=',$roll_no)
                                      ->first();
